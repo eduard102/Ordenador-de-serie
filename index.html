@@ -1,0 +1,53 @@
+ <!-- 
+ * Creado por Eduardo Eyzaguirre el 14/02/2017
+ --> 
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Ordenador de serie</title>   
+
+        <!-- Estilos -->  
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <!-- Scripts --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-animate.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
+    </head>
+    <body ng-app="app" ng-controller="OrdenadorSerie">
+
+
+        <div class="contenedor col-md-4 col-md-offset-4">
+            <center><h1>Ordenador de serie</h1></center>
+            
+            <!--Formulario de registro de números -->
+            <form ng-submit="agregarNum()" class="registro"  data-toggle="validator">     
+                <input  type='number' ng-model="nuevoNum" ng-pattern="/^[0-9]{1,7}$/"  placeholder="Número entero">
+                <button class="btn btn-success btn-sm" ng-click="agregarNum()">Agregar</button>  
+            </form>
+            
+            <!--Mensaje de validación -->
+            <div data-ng-bind="mensaje" class="mensaje"></div>
+            
+            <!--Resultado -->
+                <div class="resultados animate-show-hide" ng-show="resultados">
+                    
+                    <!--Sección de números registrados -->
+                    <h4>Lista de números ingresados:</h4>
+                    <md-grid-list md-cols="5" md-gutter="1em" md-row-height="4:3">
+                        <md-grid-tile class='noorder' ng-repeat="numero in numeros">  {{numero}}</md-grid-tile>
+                    </md-grid-list>
+
+                    <!--Sección de números ordenados -->
+                    <h4>Lista de números ordenados:</h4>
+                    <md-grid-list md-cols="5" md-gutter="1em" md-row-height="4:3">
+                        <md-grid-tile class='order'  ng-repeat="numero in numeros | orderBy:'valueOf()'">  {{numero}}</md-grid-tile>
+                    </md-grid-list>
+
+                <div>    
+            </div>
+    </body>
+</html>

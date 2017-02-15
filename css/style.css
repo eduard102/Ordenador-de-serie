@@ -1,0 +1,105 @@
+/*
+ * Creado por Eduardo Eyzaguirre el 14/02/2017
+ */
+
+body { 
+  font-family: 'Times New Roman';   
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #5a5a5a;
+}
+
+input[type='text'] {
+  margin-bottom: 10px; 
+}
+
+button {
+  margin-left: 10px;
+  margin: 0 auto;
+}
+
+/* Grilla donde se muestra la lista de números registrados */
+md-grid-tile {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Grilla donde muestra los números registrados */
+md-grid-tile.noorder {
+  color: red;
+}
+
+/* Grilla donde muestra los números registrados ordenados */
+md-grid-tile.order {
+  color: blue;
+}
+
+/* Formulario de registro de números */
+form.registro{
+  text-align: center;
+  margin: 15px 0px;		
+}
+
+/* Contenedor principal */
+.contenedor {
+	background-color: #f2f2f2;
+	border: 1px solid #ccc;
+	padding: 20px;
+	top: 20px;
+	-webkit-box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+}
+
+/* Mensaje de error */
+.mensaje{
+	color: red;
+	font-weight: bold;
+}
+
+/* Sección de resultados */
+.resultados {
+  margin:10px 0 20px 0;
+  padding:10px;
+  border:1px solid rgba(0,0,0,0.2);
+  border-radius:4px;
+}
+
+/* Animación cuando se muestra los resultados */
+.resultados.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+.resultados.ng-hide-remove {
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
